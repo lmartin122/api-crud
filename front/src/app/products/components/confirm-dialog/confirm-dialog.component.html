@@ -1,0 +1,21 @@
+<mat-dialog-content>
+    <h1>Are you sure?</h1>
+    <hr>
+    <p>
+        You're going to delete {{data.name}}
+        <br>
+        Do you wish to continue?
+    </p>
+    
+    <div mat-dialog-actions>
+        <button mat-button (click)="delete()" color="warn" class="button">
+            Yes, Delete!
+        </button>
+        <span class="spacer"></span> 
+        <button mat-button (click)="close()" class="button">
+            Back
+        </button>
+    </div>
+
+    
+</mat-dialog-content>

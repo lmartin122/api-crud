@@ -1,0 +1,40 @@
+<mat-card >
+
+    <mat-card-header>
+
+        <mat-card-title>{{product.name | titlecase}} - {{product.price | currency}}</mat-card-title>
+        <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+    
+    </mat-card-header>
+    
+    <img mat-card-image src={{product.imageUrl}}>
+   
+    <mat-card-content>
+        <h3></h3>
+        <p>
+            <strong>Net weight: </strong> {{product.weight.value}}{{product.weight.uom}} 
+            <br>
+            <strong>Quantity: </strong> {{product.qty}}
+        </p>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button
+            class="me-1" 
+            mat-button color="warn"
+            [routerLink]="['/products', product._id]">
+            See more...
+        </button>
+
+        <button 
+            mat-button color="warn"
+            [routerLink]="['/products/edit', product._id]">
+
+            Edit
+        </button>
+
+    </mat-card-actions>
+
+</mat-card>

@@ -1,0 +1,102 @@
+<div class="container animate__animated animate__fadeIn">
+    <h1>
+        {{(product._id ? 'Edit' : 'New')}} 
+        Product
+        <small>{{product.name}}</small>
+    </h1> 
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <mat-form-field class="col">
+                    <mat-label> Price </mat-label>
+                    <input matInput
+                        type="text"
+                        [(ngModel)]="product.price"
+                        required>
+                </mat-form-field>
+                
+                <mat-form-field class="col">
+                    <mat-label> Quantity </mat-label>
+                    <input matInput
+                        type="text"
+                        [(ngModel)]="product.qty"
+                        required>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field class="ancho">
+                <mat-label>Name</mat-label>
+                <input matInput
+                    type="text"
+                    [(ngModel)]="product.name"
+                    required>
+            </mat-form-field>
+
+            <mat-form-field class="ancho">
+                <mat-label>Brand</mat-label>
+                <input matInput
+                    type="text"
+                    [(ngModel)]="product.brand"
+                    required>
+            </mat-form-field>
+
+            <mat-form-field class="ancho ">
+                <mat-label>Image Url</mat-label>
+                <input matInput
+                    type="url"
+                    [(ngModel)]="product.imageUrl"
+                    required>
+            </mat-form-field>
+
+            <div class="row">
+                <mat-form-field class="col">
+                    <mat-label> Value </mat-label>
+                    <input matInput
+                        type="text"
+                        [(ngModel)]="product.weight.value"
+                        required>
+                </mat-form-field>
+                
+                <mat-form-field class="col">
+                    <mat-label> Unit </mat-label>
+                    <input matInput
+                        type="text"
+                        [(ngModel)]="product.weight.uom"
+                        required>
+                </mat-form-field>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col">
+                    <button mat-raised-button
+                    color="primary"
+                    class="ancho"
+                    (click)="save()">
+                        <mat-icon>edit</mat-icon>
+                        {{(product._id) ? 'Update' : 'Create'}}
+                    </button>
+                </div>
+                <div class="col"
+                    *ngIf="product._id">
+                    <button mat-raised-button
+                    color="warn"
+                    class="ancho"
+                    (click)="deleteProduct()">
+                        <mat-icon>remove</mat-icon>
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <img src={{product.imageUrl}}>
+        </div>
+
+    </div>
+
+
+
+</div>

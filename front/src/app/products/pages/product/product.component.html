@@ -1,0 +1,61 @@
+
+<div *ngIf="product" class="row animate__animated animate__fadeIn">
+    <div class="col"></div> <!--Para centrar en la pantalla la col que falta-->
+    <mat-card class="col-md-5">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.brand }}</mat-card-subtitle>
+      </mat-card-header>
+      
+
+      <mat-card-content>
+        <mat-list>
+          
+          <mat-list-item>
+            <mat-icon matListItemIcon>attach_money</mat-icon>
+            Price: {{ product.price }}
+          </mat-list-item>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>shopping_cart</mat-icon>
+            There are {{ product.qty }} left
+          </mat-list-item>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>balance</mat-icon>
+            Net Weight: {{ product.weight.value }} {{product.weight.uom}}
+          </mat-list-item>
+        </mat-list>
+
+
+  
+
+  
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>Description</mat-card-title>  
+      </mat-card-header>
+      <mat-card-content>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur explicabo cumque reiciendis in similique, voluptate suscipit velit nisi excepturi modi. Illo ratione porro nulla quidem cum quas blanditiis dolor! Repellat. lorem
+      </mat-card-content>
+
+
+      <button
+      class="mt-auto mb-2"
+      mat-raised-button
+      color="warn"
+      (click)="goToListProducts()"
+      >
+      Back
+    </button>
+
+    </mat-card>
+
+
+    <div class="col-md-6">
+      <img class="img" src="{{product.imageUrl}}" [alt]="product.name"/>
+    </div>
+          
+
+</div>
